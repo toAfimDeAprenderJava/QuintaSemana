@@ -22,8 +22,8 @@ public class Browser {
 	}
 	
 	public void login() {
-		driver.findElement(By.id("username")).sendKeys("701033");
-		driver.findElement(By.id("PasswordInternal")).sendKeys("T@cito170667xP");
+		driver.findElement(By.id("username")).sendKeys("");
+		driver.findElement(By.id("PasswordInternal")).sendKeys("");
 		
 		driver.findElement(By.id("Log_On1")).click();
 		
