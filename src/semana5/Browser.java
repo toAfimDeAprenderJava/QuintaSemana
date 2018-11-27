@@ -22,6 +22,7 @@ public class Browser {
 	}
 	
 	public void login() {
+		//insira abaixo seu "username" (funcional) e logo abaixo em "PasswordInternal" sua senha
 		driver.findElement(By.id("username")).sendKeys("");
 		driver.findElement(By.id("PasswordInternal")).sendKeys("");
 		

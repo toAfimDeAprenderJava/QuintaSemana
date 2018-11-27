@@ -1,45 +1,26 @@
 package semana5;
 
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class Timesheet extends Browser {
 
 	public void apontarHoras() {
-		// Em construção
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		//driver.findElement(By.id("CTS_TS_LAND_PER_DESCR30$0")).click();
 		driver.findElement(By.id("CTS_TS_LAND_PER_DESCR30$1")).click();
 		
 		driver.switchTo().frame("ptifrmtgtframe");
 
-		// Insira aqui o PID, casoesteja como default, comente a linha abaixo
+		//Insira aqui o PID, caso esteja como default, comente a linha abaixo
 		//driver.findElement(By.id("PROJECT_CODE$0")).sendKeys("");
-		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		// Campo Activity
-		driver.findElement(By.id("CTS_EX_ACT_VW_DESCR$prompt$img$0")).click();
+		//driver.findElement(By.id("CTS_EX_ACT_VW_DESCR$prompt$img$0")).click();
 
-		driver.findElement(By.id("RESULT0$5")).click();
+		driver.findElement(By.id("CTS_EX_ACT_VW_DESCR$0")).sendKeys("Integration & System Test");
 
-		/*
-		 * WebElement element = driver.findElement(By.id("RESULT0$5"));
-		 * 
-		 * wait.until(ExpectedConditions.invisibilityOf(element));
-		 * 
-		 * element.click();
-		 */
-		// driver.findElement(By.id("RESULT0$5")).click();
-		// WebElement element = driver.findElement(By.id("RESULT0$5"));
-
-		// wait.until(ExpectedConditions.invisibilityOf(element));
-
-		// driver.findElement(By.id("RESULT0$5")).click();
 
 		// Insira as horas dos dias aqui
 		// \/
@@ -50,7 +31,7 @@ public class Timesheet extends Browser {
 		// Segunda-feira
 		driver.findElement(By.id("TIME3$0")).sendKeys("8");
 		// Terça-feira
-		driver.findElement(By.id("TIME4$0")).sendKeys("8");
+		driver.findElement(By.id("TIME4$0")).sendKeys("");
 		// Quarta-feira
 		driver.findElement(By.id("TIME5$0")).sendKeys("8");
 		// Quinta-feira
@@ -61,6 +42,10 @@ public class Timesheet extends Browser {
 		// Submit Timesheet
 		driver.findElement(By.id("EX_TIME_HDR_WRK_PB_SUBMIT")).click();
 		// Confirm Submit Timesheet
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.switchTo().frame("ptModFrame_0");
+		driver.findElement(By.id("#ICSave")).click();
+		
 
 	}
 }
