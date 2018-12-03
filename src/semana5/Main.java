@@ -10,9 +10,9 @@ public class Main {
 		//Executando metodos da classe instanciada
 		selenium.setUpDriver();
 		
-		selenium.Login("...", "...", "..."); // colocar email cog, id e senha
+		selenium.Login("...", "...", "..."); // colocar email cog, senha e ID
 		
-		selenium.TimeSheet("", "..."); // colocar id e senha
+		selenium.TimeSheet("...", "..."); // colocar id e senha
 		
 	}
 	
